@@ -1,5 +1,15 @@
 FROM jupyter/scipy-notebook
 
+COPY --chown=${NB_UID}:${NB_GID} requirements.txt /tmp/
+RUN pip install --quiet --no-cache-dir --requirement /tmp/requirements.txt && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
+
 COPY . /kaggle
 WORKDIR /kaggle
-RUN pip install -r requirements.txt
+# RUN pip install -r requirements.txt # Simlpe alternative of the "pip install" from above
+
+# Add kaggle API-key
+COPY /private/kaggle.json /home/jovyan/.kaggle/kaggle.json
+# Hides your credentials 
+RUN chmod 600 ~/.kaggle/kaggle.json
