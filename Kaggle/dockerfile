@@ -11,5 +11,6 @@ WORKDIR /kaggle
 
 # Add kaggle API-key
 COPY /private/kaggle.json /home/jovyan/.kaggle/kaggle.json
+
 # Hides your credentials 
-RUN chmod 600 ~/.kaggle/kaggle.json
+# RUN chmod 600 ~/.kaggle/kaggle.json
