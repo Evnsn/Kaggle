@@ -16,7 +16,9 @@
 ## 0. Buisness and data understanding
 ### Download the data and make it available in your enviroment
 #### Usfull functions/methodes:
-´´´´
-pd.concat()
+```
+df['column'] = np.nan                     # Fills a (new) column with placeholders.
+df.drop('column', inplace=True, axis=1)   # Removes column
+pd.concat([...])
 pd.merge()
-´´´
+```
