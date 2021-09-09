@@ -14,9 +14,9 @@
 8. Pick best model and retrain on all the data 
 
 ## 0. Buisness and data understanding
-| Steps                                            | Additional information                            | Functions/Methodes |
-|--------------------------------------------------|---------------------------------------------------|--------------------|
-| Download data and make it available in your code | Imports: - numpy  - pandas - matplotlib - seaborn |                    |
-|                                                  |                                                   |                    |
-|                                                  |                                                   |                    |
-|                                                  |                                                   |                    |
+### Download the data and make it available in your enviroment
+#### Usfull functions/methodes:
+´´´´
+pd.concat()
+pd.merge()
+´´´
