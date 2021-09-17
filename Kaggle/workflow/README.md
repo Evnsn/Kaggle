@@ -61,7 +61,8 @@ pd.merge()
 ...
 
 ### Handle multicollinearity
-Multicollinearity occurse when independent variabels are correlated. Vi kan determen the degree of collinearity with VIF.
+Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to smallchanges and weakns the statistical power of the regression model.  
+We can determen the degree of collinearity with VIF. 
 #### Two types:
 - Structural multicollinearity: This is the result of feature engineering (it's created).
 - Data multicollinearity: This type of multicollinearity is present in the data itself (not created).
@@ -69,9 +70,14 @@ Multicollinearity occurse when independent variabels are correlated. Vi kan dete
 - 1 indicates that there is no correlation.
 - 1-5 indicates that there is a moderate correlation.
 - 5< indicates that there is a critical correlation
+#### Do you have to solve multicollinearity?
+- Moderate multicollinearity, you may not need to resolve it.
+- Multicollinearity does not influence the predictions, precision of the predictions, and the goodness-of-fit statistics. If your primary goal is to make predictions, and you not understand understanding the features, you don’t need to reduce severe multicollinearity.
 #### How to solve multicollinearity:
 - Remove some of the highly correlated independent variables.
-- Use Ridge or Lasso regression 
+- Linearly combine the independent variables.
+- Perform an analysis designed for highly correlated variables, such as principal components analysis or partial least squares regression.
+- Ridge or Lasso regression solves this problem. 
 
 
 ### Remove noise
