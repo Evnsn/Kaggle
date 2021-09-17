@@ -7,7 +7,7 @@
 3. Train, val & test split
 4. Preprocessing
    - Data transformating
-5. Pick some models
+5. [Pick some models](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#5-pick-some-models)
 6. Select model
 7. Fintune model
 8. Pick best model and retrain on all the data 
@@ -51,12 +51,28 @@ pd.merge()
 - **NMAR/MNAR (Not missing at random):**  
   - % of missingness dependent on itself.
   - **Solution:** Not safe to delete rows, can produce bias. Try to replace.
+#### Solution:
+...
 
 ### Handle duplicates
 ...
 
 ### Remove outliers
 ...
+
+### Handle multicollinearity
+Multicollinearity occurse when independent variabels are correlated. Vi kan determen the degree of collinearity with VIF.
+#### Two types:
+- Structural multicollinearity: This is the result of feature engineering (it's created).
+- Data multicollinearity: This type of multicollinearity is present in the data itself (not created).
+#### Variance Inflation Factors ([VIF](https://statisticsbyjim.com/regression/multicollinearity-in-regression-analysis/)):
+- 1 indicates that there is no correlation.
+- 1-5 indicates that there is a moderate correlation.
+- 5< indicates that there is a critical correlation
+#### How to solve multicollinearity:
+- Remove some of the highly correlated independent variables.
+- Use Ridge or Lasso regression 
+
 
 ### Remove noise
 - Regression
@@ -77,7 +93,13 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 ![ML algo map](https://scikit-learn.org/stable/_static/ml_map.png)
 ## Regression
 - Linear Regression
+- Lasso Regression
+- Ridge Regression
+- Polynomial Regression
+- Robust Regression — RANSAC (?)
+- Gaussian process regression
 - Support Vector Regression
+- Decision tree
 - Random Forest
 - Boosted Trees
 - Neural Network
