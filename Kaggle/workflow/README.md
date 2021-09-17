@@ -74,6 +74,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 ## Data transformating
 
 # 5. Pick some models
+![ML algo map](https://scikit-learn.org/stable/_static/ml_map.png)
 ## Regression
 - Linear Regression
 - Support Vector Regression
