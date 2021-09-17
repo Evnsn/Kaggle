@@ -78,7 +78,12 @@ We can determen the degree of collinearity with VIF.
 - Linearly combine the independent variables.
 - Perform an analysis designed for highly correlated variables, such as principal components analysis or partial least squares regression.
 - Ridge or Lasso regression solves this problem. 
-
+#### Usfull functions/methods:
+```
+from statsmodels.stats.outliers_influence import variance_inflation_factor
+vif_data["feature"] = X.columns
+vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.columns))]
+```
 
 ### Remove noise
 - Regression
