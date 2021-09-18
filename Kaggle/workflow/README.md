@@ -51,8 +51,15 @@ pd.merge()
 - **NMAR/MNAR (Not missing at random):**  
   - % of missingness dependent on itself.
   - **Solution:** Not safe to delete rows, can produce bias. Try to replace.
-#### Solution:
-...
+#### How to resolve missing data ([Link](https://towardsdatascience.com/how-to-handle-missing-data-8646b18db0d4)):
+- Delete the rows with missing data (MCAR).
+- Mean, median & mod.
+  - Mean => Distribution symetric.
+  - Median => Distribution skeweed or great outliers.
+  - Mod => Distribution skeweed or categorical.
+- Generate (predict): Make a model to predict the missing variable based on the other variables (regression, KNN, etc).  
+  
+Road map: [Handle missing data](https://miro.medium.com/max/875/1*_RA3mCS30Pr0vUxbp25Yxw.png)  
 
 ### Handle duplicates
 ...
