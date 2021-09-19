@@ -1,18 +1,18 @@
 # Table of content
-0. Buisness and data understanding
-1. Import data and libaries
+0. [Buisness and data understanding](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#0-buisness-and-data-understanding)
+1. [Import data and libaries](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#1-import-data-and-libaries)
    - Data integration and formatting
-2. Exploratory data analysis
+2. [Exploratory data analysis](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#2-exploratory-data-analysis)
    - Data cleaning
-3. Train, val & test split
-4. Preprocessing
+3. [Train, val & test split](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#3-train-val--test-split)
+4. [Preprocessing](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#4-preprocessing)
    - Transform data - Numerical (Feature selection)
    - Transform data - Categorical
    - Feature selection
 5. [Pick some models](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#5-pick-some-models)
-6. Select model
-7. Fintune model
-8. Pick best model and retrain on all the data 
+6. [Select model](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#6-select-model)
+7. [Fintune model](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#7-fintune-model)
+8. [Pick best model and retrain on all the data](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#8-pick-best-model-and-retrain-on-all-the-data)
 
 
 # 0. Buisness and data understanding
