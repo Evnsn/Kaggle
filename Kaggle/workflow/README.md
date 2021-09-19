@@ -16,7 +16,7 @@
 
 
 # 0. Buisness and data understanding
-## Download the data and make it available in your enviroment
+Download the data and make it available in your enviroment
 
 
 # 1. Import data and libaries
