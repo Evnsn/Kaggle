@@ -6,14 +6,18 @@
    - Data cleaning
 3. Train, val & test split
 4. Preprocessing
-   - Data transformating
+   - Transform data - Numerical (Feature selection)
+   - Transform data - Categorical
+   - Feature selection
 5. [Pick some models](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#5-pick-some-models)
 6. Select model
 7. Fintune model
 8. Pick best model and retrain on all the data 
 
+
 # 0. Buisness and data understanding
 ## Download the data and make it available in your enviroment
+
 
 # 1. Import data and libaries
 ## Some basic libaries
@@ -60,6 +64,11 @@ pd.merge()
 - Generate (predict): Make a model to predict the missing variable based on the other variables (regression, KNN, etc).  
   
 Road map: [Handle missing data](https://miro.medium.com/max/875/1*_RA3mCS30Pr0vUxbp25Yxw.png)  
+#### Usfull functions/methodes:
+```
+df[df['column'] == 0] = np.nan # Replace 0 with NA so we can compute the correct mean, medain and mod.
+df['column'].fillna(df['column'].mean())
+```
 
 ### Handle duplicates
 ...
@@ -91,12 +100,11 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 vif_data["feature"] = X.columns
 vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.columns))]
 ```
-
 ### Remove noise
 - Regression
-
 ### Handle inconsistent data
 ...
+
 
 # 3. Train, val & test split
 ### Usfull functions/methodes:
@@ -104,8 +112,40 @@ vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.c
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 ```
+
+
 # 4. Preprocessing
-## Data transformating
+## Transform data - Numerical (Feature scaling)
+Feature scaling is essential for algorithms whcih is based on distance (KNN, Regression, SVM, MLP etc). Algorithm that not use distance calculation does not require scaling (Naive Bayes, Tree based)  
+Feature scaling may squeez preformance, and is equally important as hyperparameter tuning.
+### Main methodes:
+- **Normalization** [0, 1]:  
+  When you do not know the distribution of your data or when you know the distribution is not Gaussian (a bell curve).  
+  Is usfull for algorithms that does **NOT** make assuption about the distribution of the data.
+  - KNN
+  - ANN
+- **Standarization** (mean=0, std=1):  
+  Assumes that your data has a Gaussian distribution, but this does not strictly have to be true.
+  Is usfull for algorithms that make assuption about the distribution of the data.
+  - Linear regression
+  - Logistic regression
+  - LDA
+  - PCA
+### Some other methodes:
+- Log Transform: Used to normalize skeweed data.
+- Max-abs scaling
+- Min-max scaling
+- Power transformer
+- Quantile transformer normal
+- Quantile transformer uniform
+- Robust scaling
+- Standard scaling
+
+## Transform data - Categorical:
+- One-hot-encoding
+- Label-encoding
+- Binarize
+
 
 # 5. Pick some models
 ![ML algo map](https://scikit-learn.org/stable/_static/ml_map.png)
@@ -131,6 +171,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 # 6. Select model
 
+
 # 7. Fintune model
+
 
 # 8. Pick best model and retrain on all the data 
