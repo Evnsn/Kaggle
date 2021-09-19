@@ -77,7 +77,7 @@ df['column'].fillna(df['column'].mean())
 ...
 
 ### Handle multicollinearity
-Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to smallchanges and weakns the statistical power of the regression model.  
+Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to small changes and weakness the statistical power of the  model. Models who are effected are; Linear Regression, Logistic Regression, KNN, and Naive Bayes algorithms.
 We can determen the degree of collinearity with VIF. 
 #### Two types:
 - Structural multicollinearity: This is the result of feature engineering (it's created).
