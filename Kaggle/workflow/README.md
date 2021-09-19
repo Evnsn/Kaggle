@@ -118,6 +118,10 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 ## Transform data - Numerical (Feature scaling)
 Feature scaling is essential for algorithms whcih is based on distance (KNN, Regression, SVM, MLP etc). Algorithm that not use distance calculation does not require scaling (Naive Bayes, Tree based)  
 Feature scaling may squeez preformance, and is equally important as hyperparameter tuning.
+### Nested transfomations?
+Choose one.
+### Different transformation for different features?
+It is okey to have different transformation for different features (I think).
 ### Main methodes:
 - **Normalization** [0, 1]:  
   When you do not know the distribution of your data or when you know the distribution is not Gaussian (a bell curve).  
