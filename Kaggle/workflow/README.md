@@ -107,6 +107,7 @@ vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.c
 
 
 # 3. Train, val & test split
+It is important that we split the data before we pre-processes it. We should base our data transformation on the training set to avoid a bias model.
 ### Usfull functions/methodes:
 ```
 from sklearn.model_selection import train_test_split
