@@ -1,6 +1,6 @@
 # Pima Indians
 ## Introduction
-This was my first legit machine learning project from Kaggle, besides fooling around with the titanic dataset. It was inspired på this [list](...). It was a beginner friendly dataset for exploring data and makeing some simple regression models.
+This was my first legit machine learning project from Kaggle, besides fooling around with the titanic dataset, and was inspired på this [list](https://www.kaggle.com/getting-started/114864). It was a beginner friendly dataset for exploring data and makeing some simple regression models.
 
 ## Dataset
 ### Description
