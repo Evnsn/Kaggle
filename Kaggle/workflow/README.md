@@ -78,6 +78,11 @@ df['column'].fillna(df['column'].mean())
 
 ### Encode categorical data
 Remember to encode your categorical data.
+#### Usfull functions/methodes:
+```
+dummy = pg.get_dummy(df[column])
+df = pd.concat([df, dummy], axis=1)
+```
 
 ### Handle multicollinearity (should this be in another section?)
 Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to small changes and weakness the statistical power of the  model. Models who are effected are; Linear Regression, Logistic Regression, KNN, and Naive Bayes algorithms.
@@ -111,7 +116,7 @@ vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.c
 
 # 3. Train, val & test split
 It is important that we split the data before we pre-processes it. We should base our data transformation on the training set to avoid a bias model.
-### Usfull functions/methodes:
+#### Usfull functions/methodes:
 ```
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
