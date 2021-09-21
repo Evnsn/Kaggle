@@ -76,7 +76,10 @@ df['column'].fillna(df['column'].mean())
 ### Remove outliers
 ...
 
-### Handle multicollinearity
+### Encode categorical data
+Remember to encode your categorical data.
+
+### Handle multicollinearity (should this be in another section?)
 Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to small changes and weakness the statistical power of the  model. Models who are effected are; Linear Regression, Logistic Regression, KNN, and Naive Bayes algorithms.
 We can determen the degree of collinearity with VIF. 
 #### Two types:
