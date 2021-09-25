@@ -124,7 +124,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 
 # 4. Preprocessing
-## Transform data - Numerical (Feature scaling)
+## Feature scaling
 Feature scaling is essential for algorithms whcih is based on distance (KNN, Regression, SVM, MLP etc). Algorithm that not use distance calculation does not require scaling (Naive Bayes, Tree based)  
 Feature scaling may squeez preformance, and is equally important as hyperparameter tuning.
 ### Nested transfomations?
@@ -159,6 +159,9 @@ It is okey to have different transformation for different features (I think).
 - Label-encoding
 - Binarize
 
+## Feature selection / Feature engineering
+- Polynomial features
+- Domain knowledge features
 
 # 5. Pick some models
 ![ML algo map](https://scikit-learn.org/stable/_static/ml_map.png)
