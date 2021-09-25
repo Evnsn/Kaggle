@@ -1,6 +1,6 @@
 # Competitoin overview:
 ## Finished projects:
-- [Pimp Indians](https://github.com/Evnsn/Kaggle/tree/main/Kaggle/Competitions/Pima%20Indians) - 25/09/21
+- [Pimp Indians - 25/09/21](https://github.com/Evnsn/Kaggle/tree/main/Kaggle/Competitions/Pima%20Indians)
 
 ## Potential competitions/datasets:
 ### Beginner:
