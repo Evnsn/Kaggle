@@ -1,19 +1,23 @@
 # Table of content
-0. Buisness and data understanding
-1. Import data and libaries
+0. [Buisness and data understanding](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#0-buisness-and-data-understanding)
+1. [Import data and libaries](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#1-import-data-and-libaries)
    - Data integration and formatting
-2. Exploratory data analysis
+2. [Exploratory data analysis](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#2-exploratory-data-analysis)
    - Data cleaning
-3. Train, val & test split
-4. Preprocessing
-   - Data transformating
+3. [Train, val & test split](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#3-train-val--test-split)
+4. [Preprocessing](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#4-preprocessing)
+   - Transform data - Numerical (Feature selection)
+   - Transform data - Categorical
+   - Feature selection
 5. [Pick some models](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#5-pick-some-models)
-6. Select model
-7. Fintune model
-8. Pick best model and retrain on all the data 
+6. [Select model](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#6-select-model)
+7. [Fintune model](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#7-fintune-model)
+8. [Pick best model and retrain on all the data](https://github.com/Evnsn/Kaggle/blob/main/Kaggle/workflow/README.md#8-pick-best-model-and-retrain-on-all-the-data)
+
 
 # 0. Buisness and data understanding
-## Download the data and make it available in your enviroment
+Download the data and make it available in your enviroment
+
 
 # 1. Import data and libaries
 ## Some basic libaries
@@ -60,6 +64,11 @@ pd.merge()
 - Generate (predict): Make a model to predict the missing variable based on the other variables (regression, KNN, etc).  
   
 Road map: [Handle missing data](https://miro.medium.com/max/875/1*_RA3mCS30Pr0vUxbp25Yxw.png)  
+#### Usfull functions/methodes:
+```
+df[df['column'] == 0] = np.nan # Replace 0 with NA so we can compute the correct mean, medain and mod.
+df['column'].fillna(df['column'].mean())
+```
 
 ### Handle duplicates
 ...
@@ -67,8 +76,16 @@ Road map: [Handle missing data](https://miro.medium.com/max/875/1*_RA3mCS30Pr0vU
 ### Remove outliers
 ...
 
-### Handle multicollinearity
-Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to smallchanges and weakns the statistical power of the regression model.  
+### Encode categorical data
+Remember to encode your categorical data.
+#### Usfull functions/methodes:
+```
+dummy = pg.get_dummy(df[column])
+df = pd.concat([df, dummy], axis=1)
+```
+
+### Handle multicollinearity (should this be in another section?)
+Multicollinearity occurse when independent variabels are correlated. This will potetial makes the model sensetive to small changes and weakness the statistical power of the  model. Models who are effected are; Linear Regression, Logistic Regression, KNN, and Naive Bayes algorithms.
 We can determen the degree of collinearity with VIF. 
 #### Two types:
 - Structural multicollinearity: This is the result of feature engineering (it's created).
@@ -91,21 +108,60 @@ from statsmodels.stats.outliers_influence import variance_inflation_factor
 vif_data["feature"] = X.columns
 vif_data["VIF"] = [variance_inflation_factor(X.values, i) for i in range(len(X.columns))]
 ```
-
 ### Remove noise
 - Regression
-
 ### Handle inconsistent data
 ...
 
+
 # 3. Train, val & test split
-### Usfull functions/methodes:
+It is important that we split the data before we pre-processes it. We should base our data transformation on the training set to avoid a bias model.
+#### Usfull functions/methodes:
 ```
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 ```
+
+
 # 4. Preprocessing
-## Data transformating
+## Feature scaling
+Feature scaling is essential for algorithms whcih is based on distance (KNN, Regression, SVM, MLP etc). Algorithm that not use distance calculation does not require scaling (Naive Bayes, Tree based)  
+Feature scaling may squeez preformance, and is equally important as hyperparameter tuning.
+### Nested transfomations?
+Choose one.
+### Different transformation for different features?
+It is okey to have different transformation for different features (I think).
+### Main methodes:
+- **Normalization** [0, 1]:  
+  When you do not know the distribution of your data or when you know the distribution is not Gaussian (a bell curve).  
+  Is usfull for algorithms that does **NOT** make assuption about the distribution of the data.
+  - KNN
+  - ANN
+- **Standarization** (mean=0, std=1):  
+  Assumes that your data has a Gaussian distribution, but this does not strictly have to be true.
+  Is usfull for algorithms that make assuption about the distribution of the data.
+  - Linear regression
+  - Logistic regression
+  - LDA
+  - PCA
+### Some other methodes:
+- Log Transform: Used to normalize skeweed data.
+- Max-abs scaling
+- Min-max scaling
+- Power transformer
+- Quantile transformer normal
+- Quantile transformer uniform
+- Robust scaling
+- Standard scaling
+
+## Transform data - Categorical:
+- One-hot-encoding
+- Label-encoding
+- Binarize
+
+## Feature selection / Feature engineering
+- Polynomial features
+- Domain knowledge features
 
 # 5. Pick some models
 ![ML algo map](https://scikit-learn.org/stable/_static/ml_map.png)
@@ -131,6 +187,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random
 
 # 6. Select model
 
+
 # 7. Fintune model
+
 
 # 8. Pick best model and retrain on all the data 
