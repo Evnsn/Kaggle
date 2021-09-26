@@ -3,3 +3,7 @@
 
 # Folders
 private/
+
+# Files
+*.csv
+*.zip
