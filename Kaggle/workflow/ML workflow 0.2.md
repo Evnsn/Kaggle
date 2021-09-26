@@ -2,7 +2,7 @@
 1. [Define problem](#1-define-problem)
 2. [Gather data](#2-gather-data)
 3. [Pre-processdata](#3-pre-processdata)
-    1. [Data clean-up](##data-clean-up)
+    1. [Data clean-up](#data-clean-up)
     2. Data imoutation
     3. Encode categorical features
 4. Data analyze
