@@ -5,12 +5,11 @@ RUN pip install --quiet --no-cache-dir --requirement /tmp/requirements.txt && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}"
 
-ADD . /kaggle
+COPY . /kaggle
 WORKDIR /kaggle
 # RUN pip install -r requirements.txt # Simlpe alternative of the "pip install" from above
 
 # Add kaggle API-key
 COPY /private/kaggle.json /home/jovyan/.kaggle/kaggle.json
-
 # Hides your credentials 
-# RUN chmod 600 ~/.kaggle/kaggle.json
+#RUN $ chmod 600 /home/jovyan/.kaggle/kaggle.json
