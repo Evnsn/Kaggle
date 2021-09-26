@@ -2,7 +2,7 @@
 1. [Define problem](#1-define-problem)
 2. [Gather data](#2-gather-data)
 3. [Pre-processdata](#3-pre-processdata)
-    1. [Data clean-up](##1-data-clean-up)
+    1. [Data clean-up](##data-clean-up)
     2. Data imoutation
     3. Encode categorical features
 4. Data analyze
@@ -27,7 +27,7 @@ Retrain selected model on whole dataset
 # 1. Define problem
 # 2. Gather data
 # 3. Pre-processdata
-## 1. Data clean up
+## Data clean up
 ### 1. Handle duplicates and unrellevant features
 ##    2. Data imoutation
 ###        1. Handle missing values
